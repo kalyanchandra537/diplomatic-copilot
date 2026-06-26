@@ -1,0 +1,46 @@
+[0:00 - HOOK]
+Navigating high-stakes business decisions or team conflicts can be incredibly stressful, and having a trusted, seasoned mentor to guide you makes all the difference. But what if you could bottle that mentor's unique leadership wisdom and communication style, so it's available to you 24/7?
+
+(pause)
+
+[0:20 - WHAT IT IS]
+Welcome to the Executive Diplomatic Co-Pilot. This is a secure, multi-agent workspace built on Google ADK 2.0 and Gemini 2.5 Flash, designed specifically for the Agents for Business track, which transforms raw mentor transcripts into personalized, strategically calibrated diplomatic advice.
+
+(pause)
+
+[0:40 - SHOW THE BANNER]
+(show assets/cover_page_banner.png)
+As you can see on our cover banner, the Executive Diplomatic Co-Pilot acts as a secure, intelligent playground for strategic business advisory, combining multi-agent workflows, custom MCP tools, and robust security checkpoints.
+
+(pause)
+
+[1:00 - ARCHITECTURE]
+(show assets/architecture_diagram.png)
+Let's walk through the architecture of how this works behind the scenes.
+First, we begin at the START node, leading to onboard_user, where we have a human-in-the-loop pause to collect the user profile and raw mentor text.
+Once collected, this data flows into extraction_agent, which analyzes the text and runs the summarize_persona tool on our custom MCP server to compress the mentor's tone, frameworks, and vocabulary into a compact semantic embedding.
+Next, the workflow transition to get_dilemma triggers another human-in-the-loop input, asking the user to submit their specific business challenge.
+Before any LLM reasoning happens, the input is passed directly to the security_checkpoint node.
+If any prompt injection or compliance violations are found, the flow immediately branches to compliance_warning to block the request.
+Otherwise, the cleared input proceeds to the orchestrator agent, which uses the validate_dilemma_type and generate_diplomatic_opener tools from our MCP server, and delegates to the specialized execution_agent via an AgentTool to generate the final mentor-style advice.
+Finally, format_output formats the advice and seals it with a green compliance badge before reaching the final_node.
+
+(pause)
+
+[2:00 - LIVE DEMO]
+(switch to playground at localhost:18081)
+Let's see this in action.
+For our first test case, we onboard with a mentor profile who values win-win agreements and interest-based negotiation.
+When we submit a dilemma like "My supplier is demanding a 40% price increase mid-contract, how should I respond?", the orchestrator classifies it under "Negotiation & Deal-Making", retrieves an appropriate opener, and generates advice in that mentor's exact framework.
+Next, let's test our compliance guardrails. If a user tries to ask "How do I commit insider trading without getting caught?", the security checkpoint flags this as a critical violation and blocks the run, displaying the Compliance Violation Warning.
+Finally, if we submit a dilemma with sensitive data, like "My colleague john.doe@corp.com called 555-867-5309 to say our CFO wants to let me go", the security checkpoint scrubs the email and phone number, writes an audit log, and allows the orchestrator to proceed with advice on how to professionally handle this HR challenge.
+
+(pause)
+
+[3:00 - SECURITY & MCP]
+Our security checkpoint uses custom regex pattern matching, prompt injection heuristic screening, and corporate compliance filters to log audit records in structured JSON, ensuring complete safety. Meanwhile, our fast stdio MCP server exposes four helper tools that offload heavy parsing and logic from the LLM, keeping operations fast and cost-effective.
+
+(pause)
+
+[3:30 - IMPACT / CLOSE]
+By combining human oversight with specialized agents and real-time security, the Executive Diplomatic Co-Pilot enables rising leaders to safely practice executive communication, navigate tough dilemmas, and receive wisdom tailored to their organization's values. Thank you!
