@@ -107,8 +107,8 @@ async def onboard_user(ctx: Context, node_input: Any):
         yield RequestInput(
             interrupt_id="profile_name",
             message=(
-                "👤 **Onboarding — Screen 1: Secure Setup**\n\n"
-                "Welcome to the Executive Diplomatic Co-Pilot.\n"
+                "👤 **Unified Dashboard — Secure Onboarding**\n\n"
+                "Welcome to the Executive Diplomatic Co-Pilot Unified Dashboard.\n"
                 "Please create your profile by entering your Name and Title.\n"
                 "Example: Jane Doe, Chief of Staff"
             )
@@ -119,7 +119,7 @@ async def onboard_user(ctx: Context, node_input: Any):
         yield RequestInput(
             interrupt_id="mentor_text",
             message=(
-                "📄 **Transcript Ingestion — Screen 1**\n\n"
+                "📄 **Unified Dashboard — Mentor Transcript Ingestion**\n\n"
                 "Please paste transcripts, speeches, or written behavioral descriptions "
                 "of your ideal business mentor or professor.\n\n"
                 "The system will extract their linguistic style and professional frameworks."
@@ -150,7 +150,7 @@ async def get_dilemma(ctx: Context, node_input: Any):
         yield RequestInput(
             interrupt_id="user_dilemma",
             message=(
-                "🎭 **Screen 2: Interactive Dilemma Solver Playground**\n\n"
+                "🎭 **Unified Dashboard — Dilemma Solver**\n\n"
                 f"**Extracted Mentor Persona:**\n"
                 f"- Tone: {tone}\n"
                 f"- Frameworks: {frameworks}\n\n"
@@ -298,7 +298,7 @@ edges = [
 root_agent = Workflow(
     name="diplomatic_copilot_workflow",
     edges=edges,
-    description="Executive Diplomatic Co-Pilot — Multi-Agent Workflow with Security Guardrails",
+    description="Executive Diplomatic Co-Pilot — Unified Dashboard · Multi-Agent Workflow with Security Guardrails",
 )
 
 app = App(

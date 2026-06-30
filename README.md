@@ -2,7 +2,7 @@
 
 > **Track:** Agents for Business · **Framework:** Google ADK 2.0 · **Model:** Gemini 2.5 Flash
 
-A lightweight, multi-agent workspace that learns your ideal mentor's communication style from raw text transcripts and then generates strategically calibrated, diplomatically polished business advice — on demand.
+A lightweight, multi-agent workspace that learns your ideal mentor's communication style from raw text transcripts and then generates strategically calibrated, diplomatically polished business advice — on demand. Interact through the **Unified Dashboard** at `http://localhost:18081`.
 
 ---
 
@@ -106,10 +106,10 @@ Create `.env` in the project root (or workspace root):
 GOOGLE_API_KEY=your_key_here
 ```
 
-### 3. Launch the interactive playground
+### 3. Launch the Unified Dashboard
 ```bash
 make playground
-# Opens http://localhost:18081
+# Opens http://localhost:18081 — the Unified Dashboard
 ```
 
 ### 4. Run all unit tests
@@ -155,14 +155,14 @@ Blocked inputs are routed to `compliance_warning` and never reach the LLM.
 
 ---
 
-## 🎯 User Flow
+## 🎯 User Flow (Unified Dashboard)
 
 ```
-Screen 1: Onboarding
+Unified Dashboard — Step 1: Secure Onboarding
   → Enter your Name & Title
   → Paste your mentor's transcript/speeches
 
-Screen 2: Dilemma Solver Playground
+Unified Dashboard — Step 2: Dilemma Solver
   → See the extracted persona summary (tone + frameworks)
   → Enter your business dilemma
   → Receive a diplomatically styled, mentor-persona answer
@@ -189,7 +189,7 @@ Set these in your `.env` file:
 | Command | Description |
 |---|---|
 | `make install` | Install dependencies with `uv sync` |
-| `make playground` | Launch ADK web UI at `http://localhost:18081` |
+| `make playground` | Launch Unified Dashboard at `http://localhost:18081` |
 | `make run` | Run FastAPI server (Agent Runtime local mode) |
 | `make test` | Run all unit tests |
 | `make lint` | Lint with `ruff` |
@@ -297,7 +297,7 @@ make playground
 
 ## 🎤 Demo Script
 
-The spoken narration script for presenting this project and walking through the slides and live demo is available at [DEMO_SCRIPT.txt](DEMO_SCRIPT.txt).
+The spoken narration script for presenting this project — walking through the Unified Dashboard and live demo — is available at [DEMO_SCRIPT.txt](DEMO_SCRIPT.txt).
 
 ---
 

@@ -146,9 +146,9 @@ The MCP server is launched as a subprocess by each agent's `McpToolset` on first
 
 ## HITL Flow
 
-The Workflow uses two `RequestInput` pause points:
+The Workflow uses two `RequestInput` pause points, both surfaced through the **Unified Dashboard** at `http://localhost:18081`:
 
-### Screen 1 — Secure Onboarding
+### Step 1 — Unified Dashboard: Secure Onboarding
 ```
 Interrupts on: profile_name (then mentor_text)
 Shows: Welcome message + instructions for pasting mentor transcripts
@@ -156,7 +156,7 @@ Saves to: ctx.state["profile_name"], ctx.state["mentor_text"]
 ```
 This gates the entire system behind a deliberate user action — no LLM call happens until the user has provided both their identity and their mentor's text.
 
-### Screen 2 — Dilemma Solver Playground
+### Step 2 — Unified Dashboard: Dilemma Solver
 ```
 Interrupts on: user_dilemma
 Shows: Extracted persona summary (tone + frameworks from extraction_agent)
